@@ -11,7 +11,7 @@ public class DynamicPortInitializer implements ApplicationListener<ApplicationEn
     @Override
     public void onApplicationEvent(ApplicationEnvironmentPreparedEvent event) {
         ConfigurableEnvironment environment = event.getEnvironment();
-        int baseport = environment.getProperty("server.port", Integer.class, 8081);
+        int baseport = environment.getProperty("server.port", Integer.class, 8080);
         int port = baseport;
 
         while (true) {
